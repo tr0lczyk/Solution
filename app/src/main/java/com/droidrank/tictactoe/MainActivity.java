@@ -9,8 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity{
-
+public class MainActivity extends AppCompatActivity {
 
 
     Button block1, block2, block3, block4, block5, block6, block7, block8, block9, restart;
@@ -37,11 +36,21 @@ public class MainActivity extends AppCompatActivity{
         result = (TextView) findViewById(R.id.tv_show_result);
         restart = (Button) findViewById(R.id.bt_restart_game);
 
+
+        /**
+         *
+         *
+         * setting up working buttons
+         *
+         *
+         */
+
+
         block1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block1.getText().toString().equals("")){
-                    if(player == 0){
+                if (block1.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block1.setText("O");
                         playerWins();
@@ -61,8 +70,8 @@ public class MainActivity extends AppCompatActivity{
         block2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block2.getText().toString().equals("")){
-                    if(player == 0){
+                if (block2.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block2.setText("O");
                         playerWins();
@@ -82,8 +91,8 @@ public class MainActivity extends AppCompatActivity{
         block3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block3.getText().toString().equals("")){
-                    if(player == 0){
+                if (block3.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block3.setText("O");
                         playerWins();
@@ -103,8 +112,8 @@ public class MainActivity extends AppCompatActivity{
         block4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block4.getText().toString().equals("")){
-                    if(player == 0){
+                if (block4.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block4.setText("O");
                         playerWins();
@@ -124,8 +133,8 @@ public class MainActivity extends AppCompatActivity{
         block5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block5.getText().toString().equals("")){
-                    if(player == 0){
+                if (block5.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block5.setText("O");
                         playerWins();
@@ -145,8 +154,8 @@ public class MainActivity extends AppCompatActivity{
         block6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block6.getText().toString().equals("")){
-                    if(player == 0){
+                if (block6.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block6.setText("O");
                         playerWins();
@@ -166,8 +175,8 @@ public class MainActivity extends AppCompatActivity{
         block7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block7.getText().toString().equals("")){
-                    if(player == 0){
+                if (block7.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block7.setText("O");
                         playerWins();
@@ -188,8 +197,8 @@ public class MainActivity extends AppCompatActivity{
         block8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block8.getText().toString().equals("")){
-                    if(player == 0){
+                if (block8.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block8.setText("O");
                         playerWins();
@@ -209,8 +218,8 @@ public class MainActivity extends AppCompatActivity{
         block9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(block9.getText().toString().equals("")){
-                    if(player == 0){
+                if (block9.getText().toString().equals("")) {
+                    if (player == 0) {
                         player = 1;
                         block9.setText("O");
                         playerWins();
@@ -229,7 +238,11 @@ public class MainActivity extends AppCompatActivity{
 
 
         /**
+         *
+         *
          * Restarts the game
+         *
+         * Alert dialog creation
          */
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -257,7 +270,11 @@ public class MainActivity extends AppCompatActivity{
         playerWins();
     }
 
-    public void playerWins(){
+    /**
+     * Logic of how to win a game
+     */
+
+    public void playerWins() {
         if ((block1.getText() == "X" && block2.getText() == "X" && block3.getText() == "X") ||
                 (block4.getText() == "X" && block5.getText() == "X" && block6.getText() == "X") ||
                 (block7.getText() == "X" && block8.getText() == "X" && block9.getText() == "X") ||
@@ -265,27 +282,29 @@ public class MainActivity extends AppCompatActivity{
                 (block2.getText() == "X" && block5.getText() == "X" && block8.getText() == "X") ||
                 (block3.getText() == "X" && block6.getText() == "X" && block9.getText() == "X") ||
                 (block1.getText() == "X" && block5.getText() == "X" && block9.getText() == "X") ||
-                (block3.getText() == "X" && block5.getText() == "X" && block7.getText() == "X")){
-            result.setText("Player 1 Wins");
-        }
-        else if ((block1.getText() == "O" && block2.getText() == "O" && block3.getText() == "O") ||
+                (block3.getText() == "X" && block5.getText() == "X" && block7.getText() == "X")) {
+            result.setText("Player 2 Wins");
+        } else if ((block1.getText() == "O" && block2.getText() == "O" && block3.getText() == "O") ||
                 (block4.getText() == "O" && block5.getText() == "O" && block6.getText() == "O") ||
                 (block7.getText() == "O" && block8.getText() == "O" && block9.getText() == "O") ||
                 (block1.getText() == "O" && block4.getText() == "O" && block7.getText() == "O") ||
                 (block2.getText() == "O" && block5.getText() == "O" && block8.getText() == "O") ||
                 (block3.getText() == "O" && block6.getText() == "O" && block9.getText() == "O") ||
                 (block1.getText() == "O" && block5.getText() == "O" && block9.getText() == "O") ||
-                (block3.getText() == "O" && block5.getText() == "O" && block7.getText() == "O")){
+                (block3.getText() == "O" && block5.getText() == "O" && block7.getText() == "O")) {
             result.setText("Player 1 Wins");
-        }
-        else if (!(block1.getText() == "" || block2.getText() == "" || block3.getText() == "" ||
-                        block4.getText() == "" || block5.getText() == "" || block6.getText() == "" ||
-                        block7.getText() == "" || block8.getText() == "" || block9.getText() == "")){
+        } else if (!(block1.getText() == "" || block2.getText() == "" || block3.getText() == "" ||
+                block4.getText() == "" || block5.getText() == "" || block6.getText() == "" ||
+                block7.getText() == "" || block8.getText() == "" || block9.getText() == "")) {
             result.setText("It's a Tie");
         }
     }
 
-    public void resetFunction(){
+    /**
+     * reset button function
+     */
+
+    public void resetFunction() {
         block1.setText("");
         block2.setText("");
         block3.setText("");
@@ -301,8 +320,12 @@ public class MainActivity extends AppCompatActivity{
         restart.setText("Start New Game");
     }
 
-    public void gameInProgress(){
-        if (inProgress == true){
+    /**
+     * setting the button to the " Restart game mode"
+     */
+
+    public void gameInProgress() {
+        if (inProgress == true) {
             restart.setText("Restart Game");
         }
     }
