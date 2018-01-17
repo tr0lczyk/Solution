@@ -247,23 +247,7 @@ public class MainActivity extends AppCompatActivity {
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle("Tic-Tac-Toe");
-                builder.setMessage("Do you want to restart the game?");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        resetFunction();
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-                AlertDialog alert = builder.create();
-                alert.show();
+                alertDialog();
             }
         });
     }
@@ -282,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
                 (block1.getText() == "X" && block5.getText() == "X" && block9.getText() == "X") ||
                 (block3.getText() == "X" && block5.getText() == "X" && block7.getText() == "X")) {
             result.setText("Player 2 Wins");
+            alertDialogX();
         } else if ((block1.getText() == "O" && block2.getText() == "O" && block3.getText() == "O") ||
                 (block4.getText() == "O" && block5.getText() == "O" && block6.getText() == "O") ||
                 (block7.getText() == "O" && block8.getText() == "O" && block9.getText() == "O") ||
@@ -291,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
                 (block1.getText() == "O" && block5.getText() == "O" && block9.getText() == "O") ||
                 (block3.getText() == "O" && block5.getText() == "O" && block7.getText() == "O")) {
             result.setText("Player 1 Wins");
+            alertDialogO();
         } else if (!(block1.getText() == "" || block2.getText() == "" || block3.getText() == "" ||
                 block4.getText() == "" || block5.getText() == "" || block6.getText() == "" ||
                 block7.getText() == "" || block8.getText() == "" || block9.getText() == "")) {
@@ -300,6 +286,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * reset button function
+     *
      */
 
     public void resetFunction() {
@@ -326,6 +313,66 @@ public class MainActivity extends AppCompatActivity {
         if (inProgress == true) {
             restart.setText("Restart Game");
         }
+    }
+
+    public void alertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Tic-Tac-Toe");
+        builder.setMessage("Do you want to restart the game?");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                resetFunction();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    public void alertDialogO(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Tic-Tac-Toe");
+        builder.setMessage("Player 1 wins! Do you want to restart the game?");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                resetFunction();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    public void alertDialogX(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Tic-Tac-Toe");
+        builder.setMessage("Player 2 wins! Do you want to restart the game?");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                resetFunction();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 }
