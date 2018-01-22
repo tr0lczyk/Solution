@@ -1,5 +1,4 @@
 Tic Tac Toe App
 ===================================
 
-First interpretation of the tic tac toe game - made in Android Studio with Java and XML.
-Basic functionalities were implemented as well as the AlertDialog on the game restart.
+tic tac toe game for two players on one device. There could be a win or a tie. When one of the players wins, AlertDialog is displayed asking if the user wants to reset the game or not. Also the game can be reset at any time during with a restart game button.
