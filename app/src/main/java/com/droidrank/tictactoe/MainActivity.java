@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button block1, block2, block3, block4, block5, block6, block7, block8, block9, restart;
+
     TextView result;
 
     int player = 0;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                         gameInProgress();
                     }
                 }
+
             }
         });
 
