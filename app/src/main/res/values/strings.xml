@@ -13,6 +13,9 @@
 
     <string name="restart_button_text_initially">Start New Game</string>
     <string name="restart_button_text_in_middle_of_game">Restart Game</string>
+    <string name="restart">Do you want to restart the game?</string>
+    <string name="playerOneRestart">Player 1 wins! Do you want to restart the game?</string>
+    <string name="playerTwoRestart">Player 2 wins! Do you want to restart the game?</string>
 
 
 </resources>

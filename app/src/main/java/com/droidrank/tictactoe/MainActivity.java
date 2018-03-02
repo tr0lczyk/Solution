@@ -320,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
     public void alertDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Tic-Tac-Toe");
-        builder.setMessage("Do you want to restart the game?");
+        builder.setMessage(R.string.restart);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -340,7 +340,7 @@ public class MainActivity extends AppCompatActivity {
     public void alertDialogO(){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Tic-Tac-Toe");
-        builder.setMessage("Player 1 wins! Do you want to restart the game?");
+        builder.setMessage(R.string.playerOneRestart);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -360,7 +360,7 @@ public class MainActivity extends AppCompatActivity {
     public void alertDialogX(){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Tic-Tac-Toe");
-        builder.setMessage("Player 2 wins! Do you want to restart the game?");
+        builder.setMessage(R.string.playerTwoRestart);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
